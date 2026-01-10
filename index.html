@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS Agency | Modern Web Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <div class="logo"><a href="#home"><img src="icon.png" alt="logo"></a></div>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Modern Websites That Turn <div class="highlight">Visitors Into Customers</div></h1>
+            <p class="hero-sub">We build clean, professional websites designed to build trust and get you more customers.</p>
+            <a href="#contact" class="btn btn-primary">Get a Free Website Review</a>
+        </div>
+        <div>
+             <p class="hero-proof">
+                • ✔ Fast loading <br> • ✔ Mobile-friendly <br> • ✔ SEO-ready
+            </p>
+
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Website Design</h3>
+                    <p>Custom, mobile-friendly designs that look great on any device and represent your brand perfectly.</p>
+                </div>
+                <div class="card">
+                    <h3>Website Redesign</h3>
+                    <p>Give your outdated site a fresh, modern look to attract more customers and stay competitive.</p>
+                </div>
+                <div class="card">
+                    <h3>Basic SEO Setup</h3>
+                    <p>We set up your site so Google can find you easily, helping local customers discover your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose ATLAS -->
+    <section class="why-choose section-padding bg-dark">
+        <div class="container">
+            <h2 class="section-title text-white">Why Choose ATLAS?</h2>
+            <div class="grid-3">
+                <div class="feature">
+                    <h3 class="text-white">Fast Delivery</h3>
+                    <p class="text-gray">We value your time. Get your site up and running quickly without unnecessary delays.</p>
+                </div>
+                <div class="feature">
+                    <h3 class="text-white">Clean & Modern Design</h3>
+                    <p class="text-gray">Professional styles that look premium and build instant trust with your visitors.</p>
+                </div>
+                <div class="feature">
+                    <h3 class="text-white">Clear Communication</h3>
+                    <p class="text-gray">No tech jargon. We keep you updated every step of the way in plain English.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contact & Discussion</h3>
+                    <p>We chat about your business goals and what you need from your new website.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Development</h3>
+                    <p>We build your site, refining the design based on your feedback until it's perfect.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Launch & Support</h3>
+                    <p>Your site goes live! We show you how to manage it and provide ongoing support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding bg-light">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About ATLAS Agency</h2>
+                <p>ATLAS Agency is dedicated to helping small and local businesses succeed online. We believe every business deserves a professional website without the headache or the high price tag.</p>
+                <p>We focus on clarity, quality, and results. No fake numbers, no "10+ years of experience" fluff—just honest work and websites that actually help you grow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-intro">Ready to start? Fill out the form below or message us directly.</p>
+            
+            <div class="contact-wrapper">
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" placeholder="Your Business Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+                
+                <div class="contact-info">
+                    <p>Prefer to chat?</p>
+                    <a href="https://wa.me/905XXXXXXXXX" class="whatsapp-link" target="_blank">
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ATLAS Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
