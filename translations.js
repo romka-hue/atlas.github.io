@@ -152,7 +152,7 @@ const translations = {
     hero_proof: "• ✔ სწრაფი ჩატვირთვა <br> • ✔ მობილური მეგობრული <br> • ✔ SEO მზადი",
     services_title: "ჩვენი სერვისები",
     service1_title: "ვებსაიტის დიზაინი",
-    service1_desc: "მორგებული, მობილური მეგობრული დიზაინი, რომელიც멋있게გამოიყურება ნებისმიერ მოწყობილობაზე და სრულყოფილად წარმოადგენს თქვენი ბრენდი.",
+    service1_desc: "მორგებული, მობილური მეგობრული დიზაინი, რომელიც გამოიყურება ნებისმიერ მოწყობილობაზე და სრულყოფილად წარმოადგენს თქვენი ბრენდი.",
     service2_title: "ვებსაიტის გადაკეთება",
     service2_desc: "მიეცით თქვენი ძველი საიტი ახალი, თანამედროვე გარეგნობა, რათა მეტი კლიენტი მოიზიდოთ და კონკურენტული დარჩეთ.",
     service3_title: "ძირითადი SEO დაყენება",
@@ -209,17 +209,13 @@ function setLanguage(lang) {
     }
   });
   
-  // Special handling for Turkish and Georgian hero title
-  if (lang === 'tr') {
-    const heroTitle = document.getElementById('heroTitle');
-    if (heroTitle) {
-      const highlight = heroTitle.querySelector('.highlight');
-      const span = heroTitle.querySelector('span');
-      if (highlight && span) {
-        heroTitle.innerHTML = '';
-        heroTitle.appendChild(highlight.cloneNode(true));
-        heroTitle.appendChild(span.cloneNode(true));
-      }
+  // Special handling for hero title
+  const heroTitle = document.getElementById('heroTitle');
+  if (heroTitle) {
+    if (lang === 'tr') {
+      heroTitle.innerHTML = `<span class="highlight">${translations[lang].hero_highlight}</span><span>${translations[lang].hero_title}</span>`;
+    } else {
+      heroTitle.innerHTML = `<span>${translations[lang].hero_title}</span><span class="highlight">${translations[lang].hero_highlight}</span>`;
     }
   }
 }

@@ -43,7 +43,7 @@
             <a href="#contact" class="btn btn-primary" data-i18n="hero_btn">Get a Free Website Review</a>
         </div>
         <div>
-             <p class="hero-proof" data-i18n="hero_proof">
+            <p class="hero-proof" data-i18n="hero_proof">
                 • ✔ Fast loading <br> • ✔ Mobile-friendly <br> • ✔ SEO-ready
             </p>
 
@@ -173,6 +173,21 @@
     </footer>
 
     <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+        
+        window.addEventListener('scroll', () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (currentScroll > lastScrollTop) {
+                navbar.classList.add('hide');
+            } else {
+                navbar.classList.remove('hide');
+            }
+            
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+        
         emailjs.init('yZd2wyHB6kK9r8WA9');
         
         document.getElementById('contactForm').addEventListener('submit', function(e) {
