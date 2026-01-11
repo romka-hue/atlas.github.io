@@ -154,11 +154,87 @@ img {
     color: var(--accent-color);
 }
 
+.lang-selector {
+    margin-left: auto;
+}
+
+.lang-dropdown {
+    position: relative;
+}
+
+.lang-btn {
+    padding: 0.6rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.lang-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--white);
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 140px;
+    display: none;
+    z-index: 1000;
+    margin-top: 0.5rem;
+}
+
+.lang-menu.active {
+    display: block;
+}
+
+.lang-option {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.lang-option:hover {
+    background-color: var(--light-gray);
+    color: var(--accent-color);
+}
+
+.lang-option:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.lang-option:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
 /* Hero Section */
+.highlight {
+    background-color: rgba(255, 255, 0, 0.541) ;
+}
 .hero {
     padding: 6rem 0;
     text-align: center;
     background-color: var(--light-gray);
+}
+#heroTitle {
+    display: inline;
 }
 
 .hero-logo {
@@ -172,7 +248,16 @@ img {
 .hero-logo:hover {
     transform: scale(1.05);
 }
-
+.hero-proof {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    text-align: left;
+    padding: 6%;
+}
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -359,18 +444,7 @@ img {
         grid-template-columns: 1fr;
     }
 }
-.highlight {
-    background-color: rgba(255, 255, 0, 0.541) ;
-}
-.hero-proof {
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-style: italic;
-    text-align: left;
-    padding: 6%;
-}
+
+
 
 
