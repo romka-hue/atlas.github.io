@@ -443,22 +443,102 @@ body {
 }
 /* Media Queries */
 
+/* 4K Responsive */
+@media (min-width: 2560px) {
+    :root {
+        --spacing-section: 6rem;
+    }
+    
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    .container {
+        max-width: 1600px;
+    }
+    
+    .nav-links {
+        gap: 4rem;
+        font-size: 1.2rem;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    .lang-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+    
+    .hero-sub {
+        font-size: 1.5rem;
+    }
+    
+    .hero-proof {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    .card {
+        padding: 3rem;
+    }
+    
+    .card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .grid-3 {
+        gap: 3rem;
+    }
+    
+    .step-number {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 1.2rem;
+        font-size: 1.1rem;
+    }
+}
+
 /* Tablet Responsive */
 @media (max-width: 1024px) {
     .nav-links {
         gap: 1.5rem;
 
     }
-    .li lang-selector {
-        right: 100px;
-        ;
-    }
-    
-
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
     .hero img {
         font-size: 2rem;
     }
@@ -472,9 +552,168 @@ body {
         gap: 1rem;
         font-size: 0.85rem;
     }
-
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .lang-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-sub {
+        font-size: 1rem;
+    }
+    
+    .hero-proof {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
     .grid-3 {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
-} 
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .section-padding {
+        padding: 2rem 0;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+        font-size: 0.95rem;
+    }
+}
 
+/* Small Phone Responsive */
+@media (max-width: 480px) {
+    body {
+        padding-top: 65px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .nav-container {
+        gap: 0.25rem;
+        padding: 0 0.5rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    .lang-btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-sub {
+        font-size: 0.9rem;
+    }
+    
+    .hero-proof {
+        font-size: 0.9rem;
+        padding: 4%;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .section-title {
+        margin-bottom: 2rem;
+    }
+    
+    .section-title::after {
+        width: 40px;
+    }
+    
+    .card {
+        padding: 1.2rem;
+    }
+    
+    .card h3 {
+        font-size: 1rem;
+    }
+    
+    .section-padding {
+        padding: 1.5rem 0;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        margin: 0 auto 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 0.85rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .contact-wrapper {
+        max-width: 100%;
+    }
+}
