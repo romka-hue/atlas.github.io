@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="translations.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -133,10 +134,15 @@
             <p class="contact-intro" data-i18n="contact_intro">Ready to start? Fill out the form below or message us directly.</p>
             
             <div class="contact-wrapper">
-                <form class="contact-form" action="#" method="POST">
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     <div class="form-group">
                         <label for="name" data-i18n="form_name">Name</label>
                         <input type="text" id="name" name="name" required data-i18n="form_name_placeholder" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
                     </div>
                     <div class="form-group">
                         <label for="business" data-i18n="form_business">Business Name</label>
@@ -167,6 +173,28 @@
     </footer>
 
     <script>
+        emailjs.init('yZd2wyHB6kK9r8WA9');
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (this.website.value) {
+                console.log('Spam detected');
+                return;
+            }
+            
+            emailjs.sendForm('ATLAS-frmsybcwe63tguybcw', 'template_augh8zt', this).then(
+                function(response) {
+                    alert('Message sent successfully!');
+                    document.getElementById('contactForm').reset();
+                },
+                function(error) {
+                    alert('Failed to send message. Please try again.');
+                    console.log('FAILED...', error);
+                }
+            );
+        });
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
