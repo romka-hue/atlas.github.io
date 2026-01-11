@@ -210,7 +210,7 @@ function setLanguage(lang) {
   });
   
   // Special handling for Turkish and Georgian hero title
-  if (lang === 'tr' || lang === 'ka') {
+  if (lang === 'tr') {
     const heroTitle = document.getElementById('heroTitle');
     if (heroTitle) {
       const highlight = heroTitle.querySelector('.highlight');
