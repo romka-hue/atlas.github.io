@@ -80,16 +80,22 @@
     <!-- demo websites -->
     <section class="demo-websites section-padding bg-light">
         <div class="container">
-            <h2 class="section-title" data-i18n="demo_title">Our Work</h2>
+            <h2 class="section-title" data-i18n="demo_title">Our Work - Website Demos</h2>
             <div class="demo-scroll" id="demoScroll">
                 <div class="demo-card">
-                    <img src="source/website-demo1.png" alt="Demo Website 1">
+                    <a href="#" target="_blank">
+                        <img src="source/website-demo1.png" alt="Demo Website 1">
+                    </a>
                 </div>
                 <div class="demo-card">
-                    <img src="source/website-demo2.png" alt="Demo Website 2">
+                    <a href="#" target="_blank">
+                        <img src="source/website-demo2.png" alt="Demo Website 2">
+                    </a>
                 </div>
                 <div class="demo-card">
-                    <img src="source/website-demo1.png" alt="Demo Website 3">
+                    <a href="#" target="_blank">
+                        <img src="source/website-demo1.png" alt="Demo Website 3">
+                    </a>
                 </div>
             </div>
             <div class="demo-dots" id="demoDots"></div>
@@ -263,7 +269,8 @@
 
         function scrollToCard(index) {
             currentIndex = index;
-            demoScroll.scrollLeft = index * window.innerWidth;
+            const cardWidth = window.innerWidth <= 430 ? window.innerWidth : window.innerWidth;
+            demoScroll.scrollLeft = index * cardWidth;
             updateDots();
         }
 
@@ -275,7 +282,9 @@
 
         function autoScroll() {
             currentIndex = (currentIndex + 1) % demoCards.length;
-            scrollToCard(currentIndex);
+            const cardWidth = window.innerWidth <= 430 ? window.innerWidth : 430;
+            demoScroll.scrollLeft += cardWidth;
+            updateDots();
         }
 
         function startAutoScroll() {
