@@ -77,7 +77,25 @@
             </div>
         </div>
     </section>
-
+    <!-- demo websites -->
+    <section class="demo-websites section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title" data-i18n="demo_title">Our Work</h2>
+            <div class="demo-scroll" id="demoScroll">
+                <div class="demo-card">
+                    <img src="source/website-demo1.png" alt="Demo Website 1">
+                </div>
+                <div class="demo-card">
+                    <img src="source/website-demo2.png" alt="Demo Website 2">
+                </div>
+                <div class="demo-card">
+                    <img src="source/website-demo1.png" alt="Demo Website 3">
+                </div>
+            </div>
+            <div class="demo-dots" id="demoDots"></div>
+        </div>
+    </section>
+        
     <!-- Why Choose ATLAS -->
     <section class="why-choose section-padding bg-dark">
         <div class="container">
@@ -100,17 +118,17 @@
     </section>
 
     <!-- Process Section -->
-    <section class="process section-padding">
-        <div class="container">
-            <h2 class="section-title" data-i18n="process_title">How It Works</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3 data-i18n="step1_title">Contact & Discussion</h3>
-                    <p data-i18n="step1_desc">We chat about your business goals and what you need from your new website.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
+        <section class="process section-padding">
+            <div class="container">
+                <h2 class="section-title" data-i18n="process_title">How It Works</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3 data-i18n="step1_title">Contact & Discussion</h3>
+                        <p data-i18n="step1_desc">We chat about your business goals and what you need from your new website.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
                     <h3 data-i18n="step2_title">Design & Development</h3>
                     <p data-i18n="step2_desc">We build your site, refining the design based on your feedback until it's perfect.</p>
                 </div>
@@ -226,6 +244,56 @@
                 });
             });
         });
+
+        // Demo scroll auto-play
+        const demoScroll = document.getElementById('demoScroll');
+        const demoDots = document.getElementById('demoDots');
+        const demoCards = demoScroll.querySelectorAll('.demo-card');
+        let currentIndex = 0;
+        let autoScrollInterval;
+
+        function createDots() {
+            demoCards.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = 'demo-dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => scrollToCard(i));
+                demoDots.appendChild(dot);
+            });
+        }
+
+        function scrollToCard(index) {
+            currentIndex = index;
+            demoScroll.scrollLeft = index * window.innerWidth;
+            updateDots();
+        }
+
+        function updateDots() {
+            document.querySelectorAll('.demo-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function autoScroll() {
+            currentIndex = (currentIndex + 1) % demoCards.length;
+            scrollToCard(currentIndex);
+        }
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(autoScroll, 5000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        if (window.innerWidth <= 430) {
+            createDots();
+            startAutoScroll();
+            demoScroll.addEventListener('mouseenter', stopAutoScroll);
+            demoScroll.addEventListener('mouseleave', startAutoScroll);
+            demoScroll.addEventListener('touchstart', stopAutoScroll);
+            demoScroll.addEventListener('touchend', startAutoScroll);
+        }
     </script>
 </body>
 </html>

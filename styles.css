@@ -465,13 +465,66 @@ body {
     text-decoration: underline;
 }
 
-/* Footer */
-.footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 0;
-    font-size: 0.9rem;
+/* Demo Websites Section */
+.demo-scroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+}
+
+.demo-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.demo-scroll::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+
+.demo-scroll::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.demo-card {
+    flex: 0 0 430px;
+    scroll-snap-align: start;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.demo-card:hover {
+    transform: scale(1.02);
+}
+
+.demo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 430/932;
+    object-fit: cover;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .demo-card {
+        flex: 0 0 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-card {
+        flex: 0 0 250px;
+    }
+    
+    .demo-scroll {
+        gap: 1rem;
+    }
 }
 /* Media Queries */
 
@@ -778,7 +831,7 @@ body {
     .lang-btn {
         font-size: 0.55rem;
     }
-    
+
     .logo img {
         height: 1.5rem;
     }
