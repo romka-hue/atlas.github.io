@@ -578,6 +578,9 @@ body {
         font-size: 2rem;
         height: 1.45rem;
     }
+    .navbar {
+        padding: 0.5rem 0;
+    }
     
     .nav-container {
         gap: 0.5rem;
@@ -678,28 +681,35 @@ body {
         gap: 0.5rem;
         font-size: 0.7rem;
     }
+    .navbar {
+        padding: 0.75rem 0;
+    }
     
     .lang-selector {
         flex-shrink: 0;
-        margin-left: 0.5rem;
+        
+        margin-right: 0.5rem;
     }
     
     .lang-btn {
         padding: 0.3rem 0.5rem;
         font-size: 0.65rem;
-        white-space: nowrap;
+        /* white-space: nowrap; */
     }
     
     .hero {
-        padding: 2rem 0;
+        padding: 5rem 2rem;
     }
     
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: rem;
     }
     
     .hero-sub {
         font-size: 0.9rem;
+    }
+    .hero-content {
+        margin-bottom: 6rem ;
     }
     
     .hero-proof {
