@@ -123,6 +123,7 @@ img {
 
 body {
     padding-top: 80px;
+    background-color: var(--light-gray);
 }
 
 .nav-container {
@@ -622,6 +623,7 @@ body {
 @media (max-width: 480px) {
     body {
         padding-top: 65px;
+        
     }
     
     h1 {
