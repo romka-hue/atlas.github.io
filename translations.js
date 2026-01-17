@@ -183,7 +183,7 @@ const translations = {
     form_message: "შეტყობინება",
     form_message_placeholder: "როგორ შეგვიძლია დაგეხმაროთ?",
     form_submit: "შეტყობინების გაგზავნა",
-    contact_prefer: "ურჩევნია ჩატი?",
+    contact_prefer: "ჩატი გირჩევნია?",
     contact_whatsapp: "WhatsApp-ზე ჩატი",
     footer: "© 2026 ATLAS სააგენტო. ყველა უფლება დაცულია."
   }
